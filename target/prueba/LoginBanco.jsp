@@ -8,7 +8,7 @@
       <a href="Iniciosesion.jsp">
         <button>Iniciar Sesión</button>
       </a>
-      <a href="lista-usuarios">
+      <a href="registrousuario.jsp">
         <button>Registrarse</button>
       </a>
       <a href="index.jsp">
