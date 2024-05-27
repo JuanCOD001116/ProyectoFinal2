@@ -1,3 +1,4 @@
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <body>
     <h2>Registro de Usuario</h2>
     <div>

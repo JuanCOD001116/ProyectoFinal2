@@ -11,27 +11,27 @@ public class UsuarioInmo implements Serializable {
     private String email;
     private String telefono;
     private String direccion;
-    private String contraseña;
+    private String password;
 
     // Constructor con todos los campos
-    public UsuarioInmo(int id_usuario, String nombre, String apellido, String email, String telefono, String direccion, String contraseña) {
+    public UsuarioInmo(int id_usuario, String nombre, String apellido, String email, String telefono, String direccion, String password) {
         this.id_usuario = id_usuario;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
         this.telefono = telefono;
         this.direccion = direccion;
-        this.contraseña = contraseña;
+        this.password = password;
     }
 
     // Constructor sin id_usuario (para inserciones donde el ID es auto_increment)
-    public UsuarioInmo(String nombre, String apellido, String email, String telefono, String direccion, String contraseña) {
+    public UsuarioInmo(String nombre, String apellido, String email, String telefono, String direccion, String password) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
         this.telefono = telefono;
         this.direccion = direccion;
-        this.contraseña = contraseña;
+        this.password = password;
     }
 
     // Constructor vacío
@@ -87,16 +87,16 @@ public class UsuarioInmo implements Serializable {
         this.direccion = direccion;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getPassword() {
+        return password;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
     public String toString() {
-        return "UsuarioInmo: { id_usuario=" + id_usuario + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email + ", telefono=" + telefono + ", direccion=" + direccion + ", contraseña=" + contraseña + " }";
+        return "UsuarioInmo: { id_usuario=" + id_usuario + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email + ", telefono=" + telefono + ", direccion=" + direccion + ", contraseña=" + password + " }";
     }
 }

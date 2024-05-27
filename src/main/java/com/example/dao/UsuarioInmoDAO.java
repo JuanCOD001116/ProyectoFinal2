@@ -11,12 +11,12 @@ import java.util.List;
 import com.example.model.UsuarioInmo;
 
 public class UsuarioInmoDAO {
-    private String URL_DB = "jdbc:mariadb://localhost:3306/inmobiliaria";
+    private String URL_DB = "jdbc:mariadb://localhost:3306/prueba";
     private String USER_DB = "root";
     private String PASSWORD_DB = "root";
 
     // Sentencias SQL
-    private static final String INSERTAR_USUARIO = "INSERT INTO USERINMO (nombre, apellido, email, telefono, direccion, contraseña) VALUES (?, ?, ?, ?, ?, ?)";
+    private static final String INSERTAR_USUARIO = "INSERT INTO USERINMO (id_usuario, nombre, apellido, email, telefono, direccion, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
     private static final String SELECCIONAR_USUARIO_ID = "SELECT * FROM USERINMO WHERE id_usuario = ?";
     private static final String SELECCIONAR_TODOS = "SELECT * FROM USERINMO";
     private static final String ELIMINAR_USUARIO = "DELETE FROM USERINMO WHERE id_usuario = ?";
@@ -45,13 +45,14 @@ public class UsuarioInmoDAO {
     public void insertarUsuario(UsuarioInmo nuevoUsuario) {
         try (Connection conexion = getConnection();
              PreparedStatement pstmt = conexion.prepareStatement(INSERTAR_USUARIO)) {
-            pstmt.setString(1, nuevoUsuario.getNombre());
-            pstmt.setString(2, nuevoUsuario.getApellido());
-            pstmt.setString(3, nuevoUsuario.getEmail());
-            pstmt.setString(4, nuevoUsuario.getTelefono());
-            pstmt.setString(5, nuevoUsuario.getDireccion());
-            pstmt.setString(6, nuevoUsuario.getContraseña());
-
+            pstmt.setInt(1, nuevoUsuario.getId_usuario());
+            pstmt.setString(2, nuevoUsuario.getNombre());
+            pstmt.setString(3, nuevoUsuario.getApellido());
+            pstmt.setString(4, nuevoUsuario.getEmail());
+            pstmt.setString(5, nuevoUsuario.getTelefono());
+            pstmt.setString(6, nuevoUsuario.getDireccion());
+            pstmt.setString(7, nuevoUsuario.getPassword());
+            
             pstmt.executeUpdate();
             System.out.println("Usuario insertado exitosamente");
         } catch (SQLException e) {
@@ -73,9 +74,9 @@ public class UsuarioInmoDAO {
                     String email = rs.getString("email");
                     String telefono = rs.getString("telefono");
                     String direccion = rs.getString("direccion");
-                    String contraseña = rs.getString("contraseña");
+                    String password = rs.getString("password");
 
-                    usuario = new UsuarioInmo(idUsuario, nombre, apellido, email, telefono, direccion, contraseña);
+                    usuario = new UsuarioInmo(idUsuario, nombre, apellido, email, telefono, direccion, password);
                 }
             }
         } catch (SQLException e) {
@@ -85,7 +86,7 @@ public class UsuarioInmoDAO {
         return usuario;
     }
 
-     public List<UsuarioInmo> seleccionarTodosLosUsuarios() {
+    public List<UsuarioInmo> seleccionarTodosLosUsuarios() {
         List<UsuarioInmo> usuarios = new ArrayList<>();
         try (Connection conexion = getConnection();
              PreparedStatement pstmt = conexion.prepareStatement(SELECCIONAR_TODOS);
@@ -133,7 +134,7 @@ public class UsuarioInmoDAO {
             pstmt.setString(3, usuario.getEmail());
             pstmt.setString(4, usuario.getTelefono());
             pstmt.setString(5, usuario.getDireccion());
-            pstmt.setString(6, usuario.getContraseña());
+            pstmt.setString(6, usuario.getPassword());
             pstmt.setInt(7, usuario.getId_usuario());
 
             filaActualizada = pstmt.executeUpdate() > 0;

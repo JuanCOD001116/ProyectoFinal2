@@ -24,9 +24,9 @@
                         <button type="submit">Entrar</button>
                     </div>
                 </form>
-                <div class="v-slot">
-                    <button onclick="history.back()">Regresar</button>
-                </div>
+                <a href="initialPageInmo.jsp">
+                    <button>Regresar</button>
+                  </a>
             </div>
         </div>
     </div>

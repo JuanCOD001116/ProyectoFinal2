@@ -1,3 +1,6 @@
+com\example\model\UsuarioInmo.class
+com\example\TestConnection.class
 com\example\java\prueba.class
 com\example\banco\Usuarios.class
-com\example\TestConnection.class
+com\example\dao\UsuarioInmoDAO.class
+com\example\servlets\RegistroUsuarioServlet.class

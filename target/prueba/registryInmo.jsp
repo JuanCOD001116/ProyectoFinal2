@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Usuario - Inmobiliaria</title>
     <link rel="stylesheet" href="stylesRegistry.css">
+    <script>
+        function validarFormulario() {
+            var password = document.forms["registerForm"]["password"].value;
+            var confirmPassword = document.forms["registerForm"]["confirm_password"].value;
+            if (password !== confirmPassword) {
+                alert("Las contraseñas no coinciden");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 <body>
     <div class="loginview">
@@ -13,9 +24,24 @@
                 <h3 class="h3">Registrar Nuevo Usuario</h3>
             </div>
             <div class="fields">
-                <form action="register" method="post">
+                <form name="registerForm" action="register" method="post" onsubmit="return validarFormulario()">
                     <div class="v-slot">
-                        <input type="text" name="username" placeholder="Nombre de Usuario" required>
+                        <input type="text" name="id_usuario" placeholder="ID de Usuario" required>
+                    </div>
+                    <div class="v-slot">
+                        <input type="text" name="nombre" placeholder="Nombre" required>
+                    </div>
+                    <div class="v-slot">
+                        <input type="text" name="apellido" placeholder="Apellido" required>
+                    </div>
+                    <div class="v-slot">
+                        <input type="email" name="email" placeholder="Correo Electrónico" required>
+                    </div>
+                    <div class="v-slot">
+                        <input type="text" name="telefono" placeholder="Teléfono" required>
+                    </div>
+                    <div class="v-slot">
+                        <input type="text" name="direccion" placeholder="Dirección" required>
                     </div>
                     <div class="v-slot">
                         <input type="password" name="password" placeholder="Contraseña" required>
@@ -24,15 +50,17 @@
                         <input type="password" name="confirm_password" placeholder="Confirmar Contraseña" required>
                     </div>
                     <div class="v-slot">
-                        <input type="email" name="email" placeholder="Correo Electrónico" required>
-                    </div>
-                    <div class="v-slot">
                         <button type="submit">Registrar</button>
                     </div>
                 </form>
                 <a href="initialPageInmo.jsp">
                     <button>Regresar</button>
                 </a>
+                <div>
+                    <c:if test="${not empty param.error}">
+                        <p style="color:red;">${param.error}</p>
+                    </c:if>
+                </div>
             </div>
         </div>
     </div>
