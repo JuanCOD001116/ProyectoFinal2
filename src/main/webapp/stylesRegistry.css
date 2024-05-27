@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at 50% 50%, #1a1a1a, #171717);
+    color: #ffffff;
+    text-align: center;
+}
+
+.loginview {
+    padding-top: 10%;
+    animation: fadeIn 300ms 10ms backwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.login-panel {
+    background: #2a2a2a;
+    border-radius: 5px;
+    padding: 20px;
+    min-width: 200px;
+    max-width: 90%;
+    margin: auto;
+    animation: slideUp 800ms 10ms backwards, fadeIn 600ms 100ms backwards;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.labels {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.labels .h3 {
+    margin: 0;
+    color: #fff;
+}
+
+.fields {
+    display: block;
+}
+
+.v-slot {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.v-slot input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.v-slot button {
+    width: 100%;
+    padding: 10px;
+    background: #4caf50;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 0.1em 0.1em;
+    transition: all 0.2s;
+}
+
+.v-slot button:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+}
+
+.v-slot button:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+}
+
+@media (max-width: 800px) {
+    .login-panel {
+        animation: scaleUp 500ms 10ms backwards, fadeIn 300ms 100ms backwards;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.95);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.login-help {
+    margin: 0 10px !important;
+    animation: fadeIn 500ms 1500ms backwards;
+}
+
+.login-help p span {
+    display: block;
+    margin-top: .5em;
+}
+
+.login-help p span a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #888;
+}

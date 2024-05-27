@@ -7,8 +7,8 @@
       <a href="LoginBanco.jsp">
         <button>Banco</button>
       </a>
-      <a href="lista-usuarios">
-        <button>Mostrar</button>
+      <a href="index2.jsp">
+        <button>Inmobiliaria</button>
       </a>
     </div>
   </body>
