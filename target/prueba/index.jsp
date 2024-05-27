@@ -7,7 +7,7 @@
       <a href="LoginBanco.jsp">
         <button>Banco</button>
       </a>
-      <a href="index2.jsp">
+      <a href="initialPageInmo.jsp">
         <button>Inmobiliaria</button>
       </a>
     </div>
