@@ -145,6 +145,31 @@ public class UsuarioInmoDAO {
         return filaActualizada;
     }
 
+    public UsuarioInmo verificarCredenciales(String email, String password) {
+        UsuarioInmo usuario = null;
+        String query = "SELECT * FROM USERINMO WHERE email = ? AND password = ?";
+        try (Connection conexion = getConnection();
+             PreparedStatement pstmt = conexion.prepareStatement(query)) {
+            pstmt.setString(1, email);
+            pstmt.setString(2, password);
+    
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    int idUsuario = rs.getInt("id_usuario");
+                    String nombre = rs.getString("nombre");
+                    String apellido = rs.getString("apellido");
+                    String telefono = rs.getString("telefono");
+                    String direccion = rs.getString("direccion");
+                    usuario = new UsuarioInmo(idUsuario, nombre, apellido, email, telefono, direccion, password);
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al verificar credenciales: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return usuario;
+    }
+
 
 
     // Otros métodos para seleccionar, eliminar y actualizar usuarios pueden ser implementados aquí

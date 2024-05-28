@@ -1,3 +1,4 @@
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,7 +16,7 @@
             <div class="fields">
                 <form action="login" method="post">
                     <div class="v-slot">
-                        <input type="text" name="username" placeholder="Usuario" required>
+                        <input type="email" name="email" placeholder="Correo Electrónico" required>
                     </div>
                     <div class="v-slot">
                         <input type="password" name="password" placeholder="Contraseña" required>
@@ -26,7 +27,13 @@
                 </form>
                 <a href="initialPageInmo.jsp">
                     <button>Regresar</button>
-                  </a>
+                </a>
+                <%
+                    String error = request.getParameter("error");
+                    if (error != null) {
+                        out.println("<p style='color:red;'>" + error + "</p>");
+                    }
+                %>
             </div>
         </div>
     </div>
