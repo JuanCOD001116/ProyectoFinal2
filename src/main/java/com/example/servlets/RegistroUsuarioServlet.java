@@ -1,7 +1,7 @@
 package com.example.servlets;
 
 import com.example.dao.UsuarioInmoDAO;
-import com.example.model.UsuarioInmo;
+import com.example.model.Usuario;
 //import org.mindrot.jbcrypt.BCrypt;
 
 import java.io.IOException;
@@ -43,7 +43,7 @@ public class RegistroUsuarioServlet extends HttpServlet {
         //String hashedPassword = BCrypt.hashpw(contraseña, BCrypt.gensalt());
 
         // Crear un nuevo objeto UsuarioInmo con los datos del formulario
-        UsuarioInmo nuevoUsuario = new UsuarioInmo(idUsuario, nombre, apellido, email, telefono, direccion,password);
+        Usuario nuevoUsuario = new Usuario(idUsuario, nombre, apellido, email, telefono, direccion,password);
         
         // Insertar el nuevo usuario en la base de datos
         try {

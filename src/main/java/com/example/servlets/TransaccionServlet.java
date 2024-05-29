@@ -1,7 +1,8 @@
 package com.example.servlets;
 
+import com.example.dao.TransaccionDAO;
 import com.example.dao.UsuarioInmoDAO;
-import com.example.model.Usuario;
+import com.example.banco.Transaccion;
 
 import java.io.IOException;
 
@@ -13,12 +14,12 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/login")
-public class LoginUsuarioServlet extends HttpServlet {
+public class TransaccionServlet extends HttpServlet {
 
-    private UsuarioInmoDAO usuarioInmoDAO;
+    private TransaccionDAO transaccionDAO;
 
     public void init() {
-        usuarioInmoDAO = new UsuarioInmoDAO();
+        transaccionDAO = new TransaccionDAO();
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -26,7 +27,7 @@ public class LoginUsuarioServlet extends HttpServlet {
         String email = request.getParameter("email");
         String contraseña = request.getParameter("password");
 
-        Usuario usuario = usuarioInmoDAO.verificarCredenciales(email, contraseña);
+        Usuario usuario = transaccionDAO.verificarCredenciales(email, contraseña);
 
         if (usuario != null) {
             HttpSession session = request.getSession();

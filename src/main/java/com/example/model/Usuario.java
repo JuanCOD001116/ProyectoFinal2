@@ -2,7 +2,7 @@ package com.example.model;
 
 import java.io.Serializable;
 
-public class UsuarioInmo implements Serializable {
+public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private int id_usuario;
@@ -14,7 +14,7 @@ public class UsuarioInmo implements Serializable {
     private String password;
 
     // Constructor con todos los campos
-    public UsuarioInmo(int id_usuario, String nombre, String apellido, String email, String telefono, String direccion, String password) {
+    public Usuario(int id_usuario, String nombre, String apellido, String email, String telefono, String direccion, String password) {
         this.id_usuario = id_usuario;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -25,7 +25,7 @@ public class UsuarioInmo implements Serializable {
     }
 
     // Constructor sin id_usuario (para inserciones donde el ID es auto_increment)
-    public UsuarioInmo(String nombre, String apellido, String email, String telefono, String direccion, String password) {
+    public Usuario(String nombre, String apellido, String email, String telefono, String direccion, String password) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
@@ -35,7 +35,7 @@ public class UsuarioInmo implements Serializable {
     }
 
     // Constructor vacío
-    public UsuarioInmo() {
+    public Usuario() {
     }
 
     // Getters y Setters

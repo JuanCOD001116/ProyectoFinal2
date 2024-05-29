@@ -8,19 +8,20 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.banco.Transaccion;
 import com.example.model.Usuario;
 
-public class UsuarioInmoDAO {
+public class TransaccionDAO {
     private String URL_DB = "jdbc:mariadb://localhost:3306/prueba";
     private String USER_DB = "root";
     private String PASSWORD_DB = "root";
 
     // Sentencias SQL
-    private static final String INSERTAR_USUARIO = "INSERT INTO USERINMO (id_usuario, nombre, apellido, email, telefono, direccion, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
-    private static final String SELECCIONAR_USUARIO_ID = "SELECT * FROM USERINMO WHERE id_usuario = ?";
-    private static final String SELECCIONAR_TODOS = "SELECT * FROM USERINMO";
-    private static final String ELIMINAR_USUARIO = "DELETE FROM USERINMO WHERE id_usuario = ?";
-    private static final String ACTUALIZAR_USUARIO = "UPDATE USERINMO SET nombre = ?, apellido = ?, email = ?, telefono = ?, direccion = ?, contraseña = ? WHERE id_usuario = ?";
+    private static final String INSERTAR_TRANSACCION = "INSERT INTO TRANSACCION (id_transaccion, numero_cuenta_entrante, numero_cuenta_saliente, fecha, monto) VALUES (?, ?, ?, ?, ?)";
+    private static final String SELECCIONAR_TRANSACCION_ID = "SELECT * FROM TRANSACCION WHERE id_transaccion = ?";
+    private static final String SELECCIONAR_TODOS = "SELECT * FROM TRANSACCION";
+    private static final String ELIMINAR_TRANSACCION = "DELETE FROM TRANSACCION WHERE id_transaccion = ?";
+    private static final String ACTUALIZAR_TRANSACCION = "UPDATE USERINMO SET id_transaccion = ?, numero_cuenta_entrante = ?, numero_cuenta_saliente = ?, fecha = ?, monto = ? WHERE id_transaccion = ?";
 
     // Método para obtener la conexión
     protected Connection getConnection() {
@@ -42,21 +43,19 @@ public class UsuarioInmoDAO {
     }
 
     // Método para insertar un usuario
-    public void insertarUsuario(Usuario nuevoUsuario) {
+    public void insertarTransaccion(Transaccion nuevoTransaccion) {
         try (Connection conexion = getConnection();
-             PreparedStatement pstmt = conexion.prepareStatement(INSERTAR_USUARIO)) {
-            pstmt.setInt(1, nuevoUsuario.getId_usuario());
-            pstmt.setString(2, nuevoUsuario.getNombre());
-            pstmt.setString(3, nuevoUsuario.getApellido());
-            pstmt.setString(4, nuevoUsuario.getEmail());
-            pstmt.setString(5, nuevoUsuario.getTelefono());
-            pstmt.setString(6, nuevoUsuario.getDireccion());
-            pstmt.setString(7, nuevoUsuario.getPassword());
+             PreparedStatement pstmt = conexion.prepareStatement(INSERTAR_TRANSACCION)) {
+            pstmt.setInt(1, nuevoTransaccion.getId_transaccion());
+            pstmt.setInt(2, nuevoTransaccion.getNumero_cuenta_entrante());
+            pstmt.setInt(3, nuevoTransaccion.getNumero_cuenta_saliente());
+            pstmt.setTimestamp(4, nuevoTransaccion.getFecha());
+            pstmt.setFloat(5, nuevoTransaccion.getMonto());
             
             pstmt.executeUpdate();
-            System.out.println("Usuario insertado exitosamente");
+            System.out.println("Transaccion insertada exitosamente");
         } catch (SQLException e) {
-            System.out.println("Error al insertar usuario: " + e.getMessage());
+            System.out.println("Error al insertar transaccion: " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -64,7 +63,7 @@ public class UsuarioInmoDAO {
     public Usuario seleccionarUsuarioPorId(int idUsuario) {
         Usuario usuario = null;
         try (Connection conexion = getConnection();
-             PreparedStatement pstmt = conexion.prepareStatement(SELECCIONAR_USUARIO_ID)) {
+             PreparedStatement pstmt = conexion.prepareStatement(SELECCIONAR_TRANSACCION_ID)) {
             pstmt.setInt(1, idUsuario);
 
             try (ResultSet rs = pstmt.executeQuery()) {
@@ -115,7 +114,7 @@ public class UsuarioInmoDAO {
     public boolean eliminarUsuario(int idUsuario) {
         boolean filaEliminada = false;
         try (Connection conexion = getConnection();
-             PreparedStatement pstmt = conexion.prepareStatement(ELIMINAR_USUARIO)) {
+             PreparedStatement pstmt = conexion.prepareStatement(ELIMINAR_TRANSACCION)) {
             pstmt.setInt(1, idUsuario);
 
             filaEliminada = pstmt.executeUpdate() > 0;
@@ -129,7 +128,7 @@ public class UsuarioInmoDAO {
     public boolean actualizarUsuario(Usuario usuario) {
         boolean filaActualizada = false;
         try (Connection conexion = getConnection();
-             PreparedStatement pstmt = conexion.prepareStatement(ACTUALIZAR_USUARIO)) {
+             PreparedStatement pstmt = conexion.prepareStatement(ACTUALIZAR_TRANSACCION)) {
             pstmt.setString(1, usuario.getNombre());
             pstmt.setString(2, usuario.getApellido());
             pstmt.setString(3, usuario.getEmail());
