@@ -1,7 +1,9 @@
-com\example\model\UsuarioInmo.class
-com\example\banco\Usuarios.class
+com\example\banco\Transaccion.class
+com\example\dao\TransaccionDAO.class
+com\example\servlets\TransaccionServlet.class
 com\example\TestConnection.class
-com\example\java\prueba.class
 com\example\servlets\LoginUsuarioServlet.class
+com\example\banco\Cuenta.class
+com\example\model\Usuario.class
 com\example\dao\UsuarioInmoDAO.class
 com\example\servlets\RegistroUsuarioServlet.class

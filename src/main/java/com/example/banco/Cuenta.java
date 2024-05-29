@@ -1,6 +1,10 @@
 package com.example.banco;
-import com.example.banco.Transaccion;
+
+
+
+
 public class Cuenta {
+    
     private double saldo;
     private double id_Cuenta;
     private int clave;
@@ -73,6 +77,5 @@ public class Cuenta {
         return "Cuenta{" + "saldo=" + saldo + ", id_Cuenta=" + id_Cuenta + ", clave=" + clave + ", cedula=" + cedula + ", estado=" + estado + ", tipo_cuenta=" + tipo_cuenta + '}';
     }
 
-    public 
     
 }

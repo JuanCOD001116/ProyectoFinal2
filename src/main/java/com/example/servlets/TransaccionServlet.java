@@ -1,19 +1,18 @@
 package com.example.servlets;
 
-import com.example.dao.TransaccionDAO;
-import com.example.dao.UsuarioInmoDAO;
 import com.example.banco.Transaccion;
+import com.example.dao.TransaccionDAO;
 
 import java.io.IOException;
-
+import java.sql.Timestamp;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/login")
+
+@WebServlet("/transaccion")
 public class TransaccionServlet extends HttpServlet {
 
     private TransaccionDAO transaccionDAO;
@@ -23,18 +22,24 @@ public class TransaccionServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        String email = request.getParameter("email");
-        String contraseña = request.getParameter("password");
+        throws ServletException, IOException {
+        
+        try {
+            int idTransaccion = Integer.parseInt(request.getParameter("id_transaccion"));
+            int numeroCuentaEntrante = Integer.parseInt(request.getParameter("numero_cuenta_entrante"));
+            int numeroCuentaSaliente = Integer.parseInt(request.getParameter("numero_cuenta_saliente"));
+            Timestamp fecha = Timestamp.valueOf(request.getParameter("fecha").replace("T", " ") + ":00");
+            float monto = Float.parseFloat(request.getParameter("monto"));
 
-        Usuario usuario = transaccionDAO.verificarCredenciales(email, contraseña);
+            // Crear un nuevo objeto Transaccion con los datos del formulario
+            Transaccion nuevaTransaccion = new Transaccion(idTransaccion, numeroCuentaEntrante, numeroCuentaSaliente, fecha, monto);
 
-        if (usuario != null) {
-            HttpSession session = request.getSession();
-            session.setAttribute("usuario", usuario);
-            response.sendRedirect("principal.jsp");
-        } else {
-            response.sendRedirect("loginInmo.jsp?error=Invalid email or password");
+            // Insertar la nueva transacción en la base de datos
+            transaccionDAO.insertarTransaccion(nuevaTransaccion);
+            response.sendRedirect("success.jsp");
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.sendRedirect("transaccion.jsp?error=Error al registrar la transacción");
         }
     }
 }
