@@ -46,6 +46,7 @@ public class RegistroUsuarioServlet extends HttpServlet {
         Usuario nuevoUsuario = new Usuario(idUsuario, nombre, apellido, email, telefono, direccion,password);
         
         // Insertar el nuevo usuario en la base de datos
+        //help me
         try {
             usuarioInmoDAO.insertarUsuario(nuevoUsuario);
             nuevoUsuario.toString();
