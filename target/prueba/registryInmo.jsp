@@ -59,7 +59,7 @@
                 </a>
                 <div>
                     <c:if test="${not empty param.error}">
-                        <p style="color:red;">${param.error}</p>
+                        
                     </c:if>
                 </div>
             </div>

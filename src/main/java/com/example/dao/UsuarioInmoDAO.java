@@ -75,6 +75,7 @@ public class UsuarioInmoDAO {
                     String telefono = rs.getString("telefono");
                     String direccion = rs.getString("direccion");
                     String password = rs.getString("password");
+                    
 
                     usuario = new UsuarioInmo(idUsuario, nombre, apellido, email, telefono, direccion, password);
                 }
