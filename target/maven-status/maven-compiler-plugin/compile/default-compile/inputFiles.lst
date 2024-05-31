@@ -1,12 +1,12 @@
-C:\Users\juanz\OneDrive\Escritorio\TECNICAS DE PROGRAMACION\prueba\src\main\java\com\example\banco\Cuenta.java
-C:\Users\juanz\OneDrive\Escritorio\TECNICAS DE PROGRAMACION\prueba\src\main\java\com\example\servlets\LoginUsuarioServlet.java
-C:\Users\juanz\OneDrive\Escritorio\TECNICAS DE PROGRAMACION\prueba\src\main\java\com\example\servlets\RegistrarMatriculaServlet.java
-C:\Users\juanz\OneDrive\Escritorio\TECNICAS DE PROGRAMACION\prueba\src\main\java\com\example\servlets\RegistroUsuarioServlet.java
-C:\Users\juanz\OneDrive\Escritorio\TECNICAS DE PROGRAMACION\prueba\src\main\java\com\example\servlets\TransaccionServlet.java
-C:\Users\juanz\OneDrive\Escritorio\TECNICAS DE PROGRAMACION\prueba\src\main\java\com\example\banco\Transaccion.java
-C:\Users\juanz\OneDrive\Escritorio\TECNICAS DE PROGRAMACION\prueba\src\main\java\com\example\model\Matricula.java
-C:\Users\juanz\OneDrive\Escritorio\TECNICAS DE PROGRAMACION\prueba\src\main\java\com\example\dao\TransaccionDAO.java
-C:\Users\juanz\OneDrive\Escritorio\TECNICAS DE PROGRAMACION\prueba\src\main\java\com\example\TestConnection.java
-C:\Users\juanz\OneDrive\Escritorio\TECNICAS DE PROGRAMACION\prueba\src\main\java\com\example\model\Usuario.java
-C:\Users\juanz\OneDrive\Escritorio\TECNICAS DE PROGRAMACION\prueba\src\main\java\com\example\dao\UsuarioInmoDAO.java
-C:\Users\juanz\OneDrive\Escritorio\TECNICAS DE PROGRAMACION\prueba\src\main\java\com\example\dao\MatriculaDAO.java
+C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\servlets\BancoServlets\TransaccionServlet.java
+C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\servlets\RegistroUsuarioServlet.java
+C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\dao\UsuarioInmoDAO.java
+C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\dao\BancoDAO\TransaccionDAO.java
+C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\model\banco\Transaccion.java
+C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\model\Usuario.java
+C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\servlets\LoginUsuarioServlet.java
+C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\model\Inmo\Matricula.java
+C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\servlets\InmoServlets\RegistrarMatriculaServlet.java
+C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\TestConnection\TestConnection.java
+C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\dao\InmoDAO\MatriculaDAO.java
+C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\model\banco\Cuenta.java

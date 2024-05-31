@@ -2,13 +2,13 @@
 <html>
   <meta>
   <body>
-    <h2>Escoge tu a donde quieres ir.</h2>
+    <h2>Bienvenido al proyecto de Banco e Inmobiliaria.</h2>
     <div class="contenedor-botones">
-      <a href="LoginBanco.jsp">
-        <button>Banco</button>
+      <a href="IniciarSesion/loginInmo.jsp">
+        <button>INICIAR SESION</button>
       </a>
-      <a href="initialPageInmo.jsp">
-        <button>Inmobiliaria</button>
+      <a href="Registro/registryInmo.jsp">
+        <button>REGISTRARSE</button>
       </a>
     </div>
   </body>
