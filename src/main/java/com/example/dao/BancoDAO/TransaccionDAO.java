@@ -1,4 +1,4 @@
-package com.example.dao;
+package com.example.dao.BancoDAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,8 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.banco.Transaccion;
 import com.example.model.Usuario;
+import com.example.model.banco.Transaccion;
 
 public class TransaccionDAO {
     private String URL_DB = "jdbc:mariadb://localhost:3306/prueba";

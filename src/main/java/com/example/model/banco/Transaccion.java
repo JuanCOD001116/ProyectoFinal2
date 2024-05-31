@@ -1,4 +1,4 @@
-package com.example.banco;
+package com.example.model.banco;
 import java.sql.Timestamp;
 
 public class Transaccion {

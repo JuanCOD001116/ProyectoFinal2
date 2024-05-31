@@ -1,7 +1,7 @@
-package com.example.servlets;
+package com.example.servlets.BancoServlets;
 
-import com.example.banco.Transaccion;
-import com.example.dao.TransaccionDAO;
+import com.example.dao.BancoDAO.TransaccionDAO;
+import com.example.model.banco.Transaccion;
 
 import java.io.IOException;
 import java.sql.Timestamp;

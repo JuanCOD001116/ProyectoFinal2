@@ -1,7 +1,7 @@
-package com.example.servlets;
+package com.example.servlets.InmoServlets;
 
-import com.example.dao.MatriculaDAO;
-import com.example.model.Matricula;
+import com.example.dao.InmoDAO.MatriculaDAO;
+import com.example.model.Inmo.Matricula;
 
 import java.io.IOException;
 

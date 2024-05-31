@@ -1,4 +1,4 @@
-package com.example.model;
+package com.example.model.Inmo;
 
 public class Matricula {
     private String direccion;

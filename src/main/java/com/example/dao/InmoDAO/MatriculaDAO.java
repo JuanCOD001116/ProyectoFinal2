@@ -1,4 +1,4 @@
-package com.example.dao;
+package com.example.dao.InmoDAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 
 import java.sql.SQLException;
 
-import com.example.model.Matricula;
+import com.example.model.Inmo.Matricula;
 
 public class MatriculaDAO {
     private String URL_DB = "jdbc:mariadb://localhost:3306/prueba";
