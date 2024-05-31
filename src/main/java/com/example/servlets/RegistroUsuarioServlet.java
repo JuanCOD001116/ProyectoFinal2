@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/register")
+@WebServlet("/Registro/register")
 public class RegistroUsuarioServlet extends HttpServlet {
 
     private UsuarioInmoDAO usuarioInmoDAO;
@@ -50,7 +50,7 @@ public class RegistroUsuarioServlet extends HttpServlet {
         try {
             usuarioInmoDAO.insertarUsuario(nuevoUsuario);
             nuevoUsuario.toString();
-            response.sendRedirect("success.jsp");
+            response.sendRedirect("../success.jsp");
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("+"+idUsuario+"+"+nombre+"+"+apellido+"+"+email+"+"+telefono+"+"+direccion+"+"+password);
