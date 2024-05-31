@@ -102,6 +102,23 @@
           <artifactId>maven-deploy-plugin</artifactId>
           <version>2.8.2</version>
         </plugin>
+        <plugin>
+          <groupId>io.bit3.jsass</groupId>
+          <artifactId>jsass-maven-plugin</artifactId>
+          <version>5.10.4</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>compile</goal>
+              </goals>
+            </execution>
+          </executions>
+          <configuration>
+            <sourceDirectory>src\main\webapp\banco web\scss\bootstrap.scss</sourceDirectory>
+            <outputDirectory>src\main\webapp\banco web\css\iniciobanco.css</outputDirectory>
+            <outputStyle>compressed</outputStyle>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
@@ -110,4 +127,5 @@
     <maven.compiler.target>1.8</maven.compiler.target>
 
   </properties>
+  
 </project>

@@ -1,0 +1,108 @@
+.container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .sidebar {
+    width: 200px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+  }
+  
+  .toggle-btn {
+    background-color: #199319;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .toggle-btn:hover {
+    background-color: #223094;
+  }
+  
+  .sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar-nav li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .sidebar-nav li:hover {
+    background-color: #ccc;
+  }
+  
+  .sidebar-nav a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .sidebar-nav a:hover {
+    color: #fff;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .top-bar {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .search-btn {
+    background-color: #199319;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .notif-btn {
+    background-color: #199319;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .user-btn {
+    background-color: #199319;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .metrics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .metric {
+    width: 25%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+  }
+  
+  .metric h2 {
+    margin-top: 0;
+  }
+  
+  .chart {
+    /* Aquí va el estilo del gráfico */
+  }
