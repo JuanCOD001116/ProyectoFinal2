@@ -31,7 +31,7 @@ public class LoginUsuarioServlet extends HttpServlet {
         if (usuario != null) {
             HttpSession session = request.getSession();
             session.setAttribute("usuario", usuario);
-            response.sendRedirect("principal.jsp");
+            response.sendRedirect("principal.jsp");// aqui antes estaba principal.jsp, estaba dashboard.jsp
         } else {
             response.sendRedirect("loginInmo.jsp?error=Invalid email or password");
         }
