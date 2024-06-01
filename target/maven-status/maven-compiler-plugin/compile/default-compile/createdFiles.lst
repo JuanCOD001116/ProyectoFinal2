@@ -1,9 +1,11 @@
+com\example\dao\InmoDAO\InmuebleDAO.class
 com\example\TestConnection\ConexionBD.class
 com\example\dao\BancoDAO\TransaccionDAO.class
 com\example\dao\InmoDAO\MatriculaDAO.class
-com\example\servlets\InmoServlets\RegistrarMatriculaServlet.class
 com\example\model\banco\Transaccion.class
 com\example\dao\UsuarioInmoDAO.class
+com\example\model\Inmo\Inmueble.class
+com\example\servlets\InmoServlets\RegistrarInmuebleServlet.class
 com\example\servlets\RegistroUsuarioServlet.class
 com\example\model\banco\Cuenta.class
 com\example\model\Inmo\Matricula.class

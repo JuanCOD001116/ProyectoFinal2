@@ -5,12 +5,14 @@ C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\examp
 C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\servlets\LoginUsuarioServlet.java
 C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\TestConnection\ConexionBD.java
 C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\model\Inmo\Matricula.java
-C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\servlets\InmoServlets\RegistrarMatriculaServlet.java
 C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\dao\InmoDAO\MatriculaDAO.java
 C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\servlets\BancoServlets\TransaccionServlet.java
+C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\dao\InmoDAO\InmuebleDAO.java
 C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\dao\UsuarioInmoDAO.java
 C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\model\Usuario.java
 C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\servlets\BancoServlets\AsignarCuentaServlet.java
 C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\TestConnection\TestConnection.java
 C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\model\banco\Cuenta.java
+C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\servlets\InmoServlets\RegistrarInmuebleServlet.java
+C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\model\Inmo\Inmueble.java
 C:\Users\juanz\OneDrive\Documentos\GitHub\ProyectoFinal2\src\main\java\com\example\servlets\BancoServlets\TransferirDineroServlet.java
