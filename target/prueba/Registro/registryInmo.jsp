@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Usuario - Inmobiliaria</title>
-    <link rel="stylesheet" href="stylesRegistry.css">
+    <link rel="stylesheet" href="./stylesRegistry.css">
     <script>
         function validarFormulario() {
             var password = document.forms["registerForm"]["password"].value;
@@ -54,7 +54,7 @@
                         <button type="submit">Registrar</button>
                     </div>
                 </form>
-                <a href="initialPageInmo.jsp">
+                <a href="../initialPageInmo.jsp">
                     <button>Regresar</button>
                 </a>
                 <div>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Exitoso</title>
-    <link rel="stylesheet" href="stylesRegistry.css">
+    <link rel="stylesheet" href="./Registro/stylesRegistry.css">
 </head>
 <body>
     <div class="loginview">
@@ -15,7 +15,7 @@
             </div>
             <div class="fields">
                 <p>¡Felicidades! Tu registro ha sido exitoso.</p>
-                <a href="loginInmo.jsp">
+                <a href="./IniciarSesion/loginInmo.jsp">
                     <button>Ir a Inicio de Sesión</button>
                 </a>
             </div>
