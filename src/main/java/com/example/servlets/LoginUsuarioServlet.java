@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/IniciarSesion/login")
+@WebServlet("/IniciarSesion/login1")
 public class LoginUsuarioServlet extends HttpServlet {
 
     private UsuarioInmoDAO usuarioInmoDAO;

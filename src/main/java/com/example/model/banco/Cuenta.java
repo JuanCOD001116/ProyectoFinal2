@@ -78,7 +78,7 @@ public class Cuenta {
     public void TransaccionCuenta(Cuenta cuenta, int monto, Timestamp fecha) {
         this.saldo = this.saldo - monto;
         int saldoActualizado = cuenta.getSaldo() + monto;
-        int id_transaccion = (int)(Math.random()*1000000000);
+       // int id_transaccion = (int)(Math.random()*1000000000);
         cuenta.setSaldo(saldoActualizado);
 
         

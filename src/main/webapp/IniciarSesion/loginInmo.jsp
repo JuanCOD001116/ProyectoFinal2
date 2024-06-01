@@ -14,7 +14,7 @@
                 <h3>Iniciar Sesión</h3>
             </div>
             <div class="fields">
-                <form action="login" method="post">
+                <form action="login1" method="post">
                     <div class="v-slot">
                         <input type="email" name="email" placeholder="Correo Electrónico" required>
                     </div>
@@ -25,7 +25,7 @@
                         <button type="submit">Entrar</button>
                     </div>
                 </form>
-                <a href="initialPageInmo.jsp">
+                <a href="/src/main/webapp/index.jsp">
                     <button>Regresar</button>
                 </a>
                 <%
