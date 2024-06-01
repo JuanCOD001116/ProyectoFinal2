@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/transaccion")
+@WebServlet("/banco web/jsp/transaccion")
 public class TransaccionServlet extends HttpServlet {
 
     private TransaccionDAO transaccionDAO;

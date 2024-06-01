@@ -15,7 +15,7 @@
         <div class="menu">
             <ul>
                 <li><a href="j.jsp">Inicio</a></li>
-                <li><a href="#">Cuentas</a></li>
+                <li><a href="./cuenta-asignada.jsp">Cuentas</a></li>
                 <li><a href="./transaccion.jsp">Transferencias</a></li>
                 <li><a href="#">Pagos</a></li>
                 <li><a href="#">Perfil</a></li>

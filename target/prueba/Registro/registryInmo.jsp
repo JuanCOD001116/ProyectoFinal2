@@ -54,9 +54,11 @@
                         <button type="submit">Registrar</button>
                     </div>
                 </form>
-                <a href="../initialPageInmo.jsp">
+                <div class="v-slot">
+                <a href="../index.jsp">
                     <button>Regresar</button>
                 </a>
+                </div>
                 <div>
                     <c:if test="${not empty param.error}">
                         

@@ -28,26 +28,22 @@
     <div class="content">
         <div class="transaction-form">
             <h3>Registrar Nueva Transacción</h3>
-            <form action="transaccion" method="post">
+            <form action="transferir-dinero" method="post">
                 <div class="form-group">
-                    <label for="id_transaccion">ID Transacción:</label>
-                    <input type="number" id="id_transaccion" name="id_transaccion" required>
+                    <label for="idCuentaOrigen">Número Cuenta Origen:</label>
+                    <input type="number" id="idCuentaOrigen" name="idCuentaOrigen" required>
                 </div>
                 <div class="form-group">
-                    <label for="numero_cuenta_entrante">Número Cuenta Entrante:</label>
-                    <input type="number" id="numero_cuenta_entrante" name="numero_cuenta_entrante" required>
-                </div>
-                <div class="form-group">
-                    <label for="numero_cuenta_saliente">Número Cuenta Saliente:</label>
-                    <input type="number" id="numero_cuenta_saliente" name="numero_cuenta_saliente" required>
+                    <label for="idCuentaDestino">Número Cuenta Destino:</label>
+                    <input type="number" id="idCuentaDestino" name="idCuentaDestino" required>
                 </div>
                 <div class="form-group">
                     <label for="fecha">Fecha:</label>
                     <input type="datetime-local" id="fecha" name="fecha" required>
                 </div>
                 <div class="form-group">
-                    <label for="monto">Monto:</label>
-                    <input type="number" step="0.01" id="monto" name="monto" required>
+                    <label for="monto">Monto a Transferir:</label>
+                    <input type="number" id="monto" name="monto" required>
                 </div>
                 <div class="form-group">
                     <button type="submit">Registrar</button>

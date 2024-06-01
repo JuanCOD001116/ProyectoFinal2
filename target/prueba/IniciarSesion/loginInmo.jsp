@@ -25,9 +25,11 @@
                         <button type="submit">Entrar</button>
                     </div>
                 </form>
-                <a href="/src/main/webapp/index.jsp">
-                    <button>Regresar</button>
-                </a>
+                <div class="v-slot">
+                    <a href="../index.jsp">
+                      <button type="button">Regresar</button>
+                    </a>
+                  </div>
                 <%
                     String error = request.getParameter("error");
                     if (error != null) {
