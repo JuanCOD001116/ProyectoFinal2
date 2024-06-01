@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Transacción</title>
     <link rel="stylesheet" type="text/css" href="banco web/menu.css">
-    <link rel="stylesheet" type="text/css" href="transaccion.css">
+    <link rel="stylesheet" type="text/css" href="../css/transaccion.css">
 </head>
 <body>
     <div class="sidebar">
@@ -16,7 +16,7 @@
         </div>
         <div class="menu">
             <ul>
-                <li><a href="index.jsp">Inicio</a></li>
+                <li><a href="./inicioBanco.jsp">Inicio</a></li>
                 <li><a href="#">Cuentas</a></li>
                 <li><a href="#">Transferencias</a></li>
                 <li><a href="#">Pagos</a></li>

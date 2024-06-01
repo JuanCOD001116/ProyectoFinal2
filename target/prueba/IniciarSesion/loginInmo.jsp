@@ -25,7 +25,7 @@
                         <button type="submit">Entrar</button>
                     </div>
                 </form>
-                <a href="initialPageInmo.jsp">
+                <a href="../initialPageInmo.jsp">
                     <button>Regresar</button>
                 </a>
                 <%

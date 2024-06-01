@@ -7,7 +7,7 @@
       <a href="./InmoWeb/jsp/dashboard.jsp">
         <button>INMOBILIARIA</button>
       </a>
-      <a href="./banco web/jsp/p.jsp">
+      <a href="./banco web/jsp/inicioBanco.jsp">
         <button>BANCO</button>
       </a>
     </div>
