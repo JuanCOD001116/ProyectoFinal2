@@ -42,4 +42,8 @@ public class TransaccionServlet extends HttpServlet {
             response.sendRedirect("transaccion.jsp?error=Error al registrar la transacción");
         }
     }
+    protected void Transaccion(){
+    
+
+    }
 }
