@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Banco JSP</title>
-    <link rel="stylesheet" type="text/css" href="menu.css">
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
     <script src="script.js"></script>
 </head>
 <body>
@@ -16,7 +16,7 @@
             <ul>
                 <li><a href="j.jsp">Inicio</a></li>
                 <li><a href="#">Cuentas</a></li>
-                <li><a href="../transaccion.jsp">Transferencias</a></li>
+                <li><a href="./transaccion.jsp">Transferencias</a></li>
                 <li><a href="#">Pagos</a></li>
                 <li><a href="#">Perfil</a></li>
                 <li><a href="#">Salir</a></li>
