@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard - Inmobiliaria</title>
-    <link rel="stylesheet" href="stylesDashboard.css">
+    <link type="text/css" rel="stylesheet" href="../css/stylesDashboard.css">
 </head>
 <body>
     <div class="header">
