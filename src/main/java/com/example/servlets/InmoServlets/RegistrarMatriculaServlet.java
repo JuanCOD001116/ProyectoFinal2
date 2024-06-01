@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/RegistrarMatriculaServlet")
+@WebServlet("/InmoWeb/jsp/RegistrarMatriculaServlet")
 public class RegistrarMatriculaServlet extends HttpServlet {
 
     private MatriculaDAO matriculaDAO;
@@ -30,7 +30,7 @@ public class RegistrarMatriculaServlet extends HttpServlet {
 
         try {
             matriculaDAO.insertarMatricula(matricula);
-            response.sendRedirect("success.jsp");
+            response.sendRedirect("../../success.jsp");
         } catch (Exception e) {
             e.printStackTrace();
             response.sendRedirect("matricula.jsp?error=Error al registrar la matrícula");
