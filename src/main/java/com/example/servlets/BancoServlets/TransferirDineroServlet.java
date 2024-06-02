@@ -1,10 +1,9 @@
 package com.example.servlets.BancoServlets;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.sql.*;
 import com.example.dao.BancoDAO.*;
-
+import com.example.model.banco.Transaccion;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -16,9 +15,11 @@ public class TransferirDineroServlet extends HttpServlet {
     private static final long serialVersionUID = 2L;
     private CuentaDAO cuentaDAO;
     private TransaccionDAO transaccionDAO;
+    private Transaccion transaccion;
     public void init() {
         cuentaDAO = new CuentaDAO();
         transaccionDAO = new TransaccionDAO();
+        
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -27,9 +28,13 @@ public class TransferirDineroServlet extends HttpServlet {
         int idCuentaDestino = Integer.parseInt(request.getParameter("idCuentaDestino"));
         int monto = Integer.parseInt(request.getParameter("monto"));
         Timestamp fecha = Timestamp.valueOf(request.getParameter("fecha").replace("T", " ") + ":00");
+        int idTransaccion = (int) (Math.random()*100000000);
+        transaccion = new Transaccion(idTransaccion, idCuentaOrigen, idCuentaDestino, fecha, monto);
 
+        
         try {
             cuentaDAO.transferirDinero(idCuentaOrigen, idCuentaDestino, monto, fecha);
+            transaccionDAO.insertarTransaccion(transaccion);
             response.sendRedirect("transferencia-exitosa.jsp");
         } catch (SQLException e) {
             e.printStackTrace();

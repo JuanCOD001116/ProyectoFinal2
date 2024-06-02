@@ -19,11 +19,11 @@ public class TransaccionDAO {
     private String PASSWORD_DB = "root";
 
     // Sentencias SQL
-    private static final String INSERTAR_TRANSACCION = "INSERT INTO TRANSACCION (id_transaccion, numero_cuenta_entrante, numero_cuenta_saliente, fecha, monto) VALUES (?, ?, ?, ?, ?)";
+    private static final String INSERTAR_TRANSACCION = "INSERT INTO TRANSACCION (id_transaccion, id_cuenta_origen, id_cuenta_saliente, fecha, monto) VALUES (?, ?, ?, ?, ?)";
     private static final String SELECCIONAR_TRANSACCION_ID = "SELECT * FROM TRANSACCION WHERE id_transaccion = ?";
     private static final String SELECCIONAR_TODOS = "SELECT * FROM TRANSACCION";
     private static final String ELIMINAR_TRANSACCION = "DELETE FROM TRANSACCION WHERE id_transaccion = ?";
-    private static final String ACTUALIZAR_TRANSACCION = "UPDATE USERINMO SET id_transaccion = ?, numero_cuenta_entrante = ?, numero_cuenta_saliente = ?, fecha = ?, monto = ? WHERE id_transaccion = ?";
+    private static final String ACTUALIZAR_TRANSACCION = "UPDATE USERINMO SET id_transaccion = ?, id_cuenta_origen = ?, id_cuenta_saliente = ?, fecha = ?, monto = ? WHERE id_transaccion = ?";
 
     // Método para obtener la conexión
     protected Connection getConnection() {
