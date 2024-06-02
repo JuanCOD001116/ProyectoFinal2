@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConexionBD {
-  private static final String URL_DB = "jdbc:mariadb://localhost:3306/mysql";
+  private static final String URL_DB = "jdbc:mariadb://localhost:3306/prueba";
   private static final String USER_DB = "root";
   private static final String PASSWORD_DB = "root";
 

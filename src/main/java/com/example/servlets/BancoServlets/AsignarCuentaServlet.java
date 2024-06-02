@@ -34,6 +34,6 @@ public class AsignarCuentaServlet extends HttpServlet {
       e.printStackTrace();
     }
 
-    response.sendRedirect("./inicibanco.jsp");
+    response.sendRedirect("./CuentaAsignada.jsp");
   }
 }

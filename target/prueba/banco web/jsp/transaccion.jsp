@@ -28,7 +28,7 @@
     <div class="content">
         <div class="transaction-form">
             <h3>Registrar Nueva Transacción</h3>
-            <form action="transferir-dinero" method="post">
+            <form action="transferirdinero" method="post">
                 <div class="form-group">
                     <label for="idCuentaOrigen">Número Cuenta Origen:</label>
                     <input type="number" id="idCuentaOrigen" name="idCuentaOrigen" required>

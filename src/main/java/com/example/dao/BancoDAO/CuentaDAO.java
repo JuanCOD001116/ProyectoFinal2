@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 
 import com.example.model.banco.Cuenta;
 import com.example.TestConnection.ConexionBD;
@@ -19,10 +20,10 @@ public class CuentaDAO {
     public void insertarCuenta(Cuenta cuenta) throws SQLException {
         try (Connection connection = ConexionBD.getConnection();
                 PreparedStatement preparedStatement = connection.prepareStatement(INSERT_CUENTA_SQL)) {
+              int id_Cuenta = (int) (Math.random()*100000000);
             preparedStatement.setInt(1, cuenta.getSaldo());
-            preparedStatement.setInt(3, cuenta.getIdUsuario());
-            int id_Cuenta = (int) (Math.random()*100000000);
             preparedStatement.setInt(2, id_Cuenta);
+            preparedStatement.setInt(3, cuenta.getIdUsuario());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             System.out.println("Error en CuentaDAO.insertarCuenta: " + e.getMessage());
@@ -76,7 +77,7 @@ public class CuentaDAO {
         }
     }
 
-    public void transferirDinero(int idCuentaOrigen, int idCuentaDestino, int monto) throws SQLException {
+    public void transferirDinero(int idCuentaOrigen, int idCuentaDestino, int monto, Timestamp fecha) throws SQLException {
         Connection connection = null;
         PreparedStatement actualizarCuentaOrigen = null;
         PreparedStatement actualizarCuentaDestino = null;
