@@ -2,6 +2,7 @@ com\example\dao\InmoDAO\InmuebleDAO.class
 com\example\TestConnection\ConexionBD.class
 com\example\dao\BancoDAO\TransaccionDAO.class
 com\example\dao\InmoDAO\MatriculaDAO.class
+com\example\servlets\InmoServlets\VentaDirectaServlet.class
 com\example\model\banco\Transaccion.class
 com\example\dao\UsuarioInmoDAO.class
 com\example\model\Inmo\Inmueble.class
@@ -10,6 +11,8 @@ com\example\servlets\RegistroUsuarioServlet.class
 com\example\model\banco\Cuenta.class
 com\example\model\Inmo\Matricula.class
 com\example\dao\BancoDAO\CuentaDAO.class
+com\example\dao\InmoDAO\VentaDAO.class
+com\example\model\Inmo\Venta.class
 com\example\servlets\BancoServlets\AsignarCuentaServlet.class
 com\example\TestConnection\TestConnection.class
 com\example\servlets\BancoServlets\TransferirDineroServlet.class
