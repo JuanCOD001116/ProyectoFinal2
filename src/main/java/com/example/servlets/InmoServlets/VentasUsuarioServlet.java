@@ -1,5 +1,7 @@
 package com.example.servlets.InmoServlets;
 
+
+
 import com.example.dao.InmoDAO.InmuebleDAO;
 import com.example.model.Inmo.Inmueble;
 
@@ -28,7 +30,7 @@ public class VentasUsuarioServlet extends HttpServlet {
             List<Inmueble> ventas = inmuebleDAO.listarVentasPorUsuario(idUsuario);
             System.out.println(ventas);
             request.setAttribute("ventas", ventas);
-            request.getRequestDispatcher("./VentasUsuario.jsp").forward(request, response);
+            request.getRequestDispatcher("ventasUsuarioResultado.jsp").forward(request, response);
         } catch (NumberFormatException e) {
             response.sendRedirect("ventasUsuario.jsp?error=ID de usuario no válido");
         } catch (Exception e) {
