@@ -18,7 +18,7 @@
                 <li><a href="./cuenta-asignada.jsp">Cuentas</a></li>
                 <li><a href="./transaccion.jsp">Transferencias</a></li>
                 <li><a href="#">Pagos</a></li>
-                <li><a href="#">Perfil</a></li>
+                <li><a href="./TCP.jsp">Transacciones Hechas</a></li>
                 <li><a href="#">Salir</a></li>
             </ul>
         </div>

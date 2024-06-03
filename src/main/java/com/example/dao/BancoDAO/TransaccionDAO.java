@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class TransaccionDAO {
     private static final String SELECCIONAR_TODOS = "SELECT * FROM TRANSACCION";
     private static final String ELIMINAR_TRANSACCION = "DELETE FROM TRANSACCION WHERE id_transaccion = ?";
     private static final String ACTUALIZAR_TRANSACCION = "UPDATE USERINMO SET id_transaccion = ?, id_cuenta_origen = ?, id_cuenta_saliente = ?, fecha = ?, monto = ? WHERE id_transaccion = ?";
-
+    private static final String SELECCIONAR_TRANSACCION_FECHA = "SELECT * FROM transaccion WHERE id_cuenta_origen =? AND fecha BETWEEN? AND?";
     // Método para obtener la conexión
     protected Connection getConnection() {
         Connection conexion = null;
@@ -62,30 +63,28 @@ public class TransaccionDAO {
         }
     }
 
-    public Usuario seleccionarUsuarioPorId(int idUsuario) {
-        Usuario usuario = null;
-        try (Connection conexion = getConnection();
-             PreparedStatement pstmt = conexion.prepareStatement(SELECCIONAR_TRANSACCION_ID)) {
-            pstmt.setInt(1, idUsuario);
+    public List<Transaccion> seleccionarTransaccionCO(int idCuentaOrigen, Timestamp fecha_inicio, Timestamp fecha_final ) {
 
-            try (ResultSet rs = pstmt.executeQuery()) {
-                if (rs.next()) {
-                    String nombre = rs.getString("nombre");
-                    String apellido = rs.getString("apellido");
-                    String email = rs.getString("email");
-                    String telefono = rs.getString("telefono");
-                    String direccion = rs.getString("direccion");
-                    String password = rs.getString("password");
-                    
-
-                    usuario = new Usuario(idUsuario, nombre, apellido, email, telefono, direccion, password);
-                }
-            }
-        } catch (SQLException e) {
-            System.out.println("Error al seleccionar usuario por ID: " + e.getMessage());
-            e.printStackTrace();
+    List<Transaccion> transaciones= new ArrayList<>();
+    try (Connection conexion = getConnection();
+    PreparedStatement preparedStatement = conexion.prepareStatement(SELECCIONAR_TRANSACCION_FECHA)) {
+        preparedStatement.setInt(1, idCuentaOrigen);
+        preparedStatement.setTimestamp(2, fecha_inicio);
+        preparedStatement.setTimestamp(3, fecha_final);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while (resultSet.next()) {
+          Transaccion transaccion = new Transaccion();
+          transaccion.setId_transaccion(resultSet.getInt("id_transaccion"));
+          transaccion.setNumero_cuenta_entrante(resultSet.getInt("id_cuenta_origen"));
+          transaccion.setNumero_cuenta_saliente(resultSet.getInt("id_cuenta_saliente"));
+          transaccion.setFecha(resultSet.getTimestamp("fecha"));
+          transaccion.setMonto(resultSet.getInt("monto"));
+          transaciones.add(transaccion);
         }
-        return usuario;
+      } catch (SQLException e) {
+        System.out.println("Error al seleccionar todos los usuarios: " + e.getMessage());
+      }
+      return transaciones;
     }
 
     public List<Usuario> seleccionarTodosLosUsuarios() {

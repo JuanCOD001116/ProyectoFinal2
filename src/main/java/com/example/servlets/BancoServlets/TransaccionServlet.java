@@ -5,6 +5,9 @@ import com.example.model.banco.Transaccion;
 
 import java.io.IOException;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -14,7 +17,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/banco web/jsp/transaccion")
 public class TransaccionServlet extends HttpServlet {
-
+    private static final long serialVersionUID = 4L;
     private TransaccionDAO transaccionDAO;
 
     public void init() {
@@ -46,4 +49,18 @@ public class TransaccionServlet extends HttpServlet {
     
 
     }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+      throws ServletException, IOException {
+    
+    TransaccionDAO transaccionDAO = new TransaccionDAO();
+    int idCuentaOrigen = Integer.parseInt(request.getParameter("id_cuenta_origen"));
+    Timestamp fecha_inicio = Timestamp.valueOf(request.getParameter("fecha_inicio").replace("T", " ") + ":00");
+    Timestamp fecha_final = Timestamp.valueOf(request.getParameter("fecha_final").replace("T", " ") + ":00");
+    List<Transaccion> transacciones = new ArrayList<>();
+    transacciones = transaccionDAO.seleccionarTransaccionCO(idCuentaOrigen, fecha_inicio, fecha_final);
+    System.out.println(transacciones);
+    request.setAttribute("transacciones", transacciones);
+    request.getRequestDispatcher("./TCP.jsp").forward(request, response);
+      }
+
 }
