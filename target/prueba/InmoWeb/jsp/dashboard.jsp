@@ -15,8 +15,8 @@
                 <li><a href="venta_directa.jsp">Venta Directa</a></li>
                 <li><a href="subasta.jsp">Subasta</a></li>
                 <li><a href="asiento_compra_venta.jsp">Asiento de Compra Venta</a></li>
-                <li><a href="registro_venta.jsp">Registro de Venta</a></li>
-                <li><a href="inventario_bienes.jsp">Inventario de Bienes</a></li>
+                <li><a href="VentasUsuario.jsp">Registro de Venta</a></li>
+                <li><a href="inventario.jsp">Inventario de Bienes</a></li>
                 <li><a href="calculo_impuestos.jsp">Calculo de Impuestos</a></li>
                 <li><a href="cobro_multas.jsp">Cobro de Multas</a></li>
                 <li><a href="transacciones.jsp">Transacciones</a></li>

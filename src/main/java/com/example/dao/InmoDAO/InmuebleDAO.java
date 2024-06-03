@@ -21,7 +21,12 @@ public class InmuebleDAO {
     private static final String ELIMINAR_INMUEBLE = "DELETE FROM inmuebles WHERE id_inmueble = ?";
     private static final String OBTENER_INMUEBLE_POR_ID = "SELECT * FROM inmuebles WHERE id_inmueble = ?";
     private static final String OBTENER_TODOS_INMUEBLES = "SELECT * FROM inmuebles";
-    
+    //private static final String LISTAR_VENTAS_POR_USUARIO = "SELECT * FROM ventas WHERE id_usuario = ?";
+    private static final String OBTENER_VENTAS_POR_USUARIO = "SELECT v.id_venta, v.id_inmueble, v.id_usuario, v.precio, v.moneda, v.fecha_venta, i.direccion, i.ciudad, i.estado, i.codigo_postal, i.precio AS precio_inmueble, i.tipo, i.descripcion, i.propietario\r\n" + //
+                "FROM ventas v\r\n" + //
+                "JOIN inmuebles i ON v.id_inmueble = i.id_inmueble\r\n" + //
+                "WHERE v.id_usuario = ?";
+
     // Método para obtener la conexión
     protected Connection getConnection() {
         Connection conexion = null;
@@ -32,6 +37,7 @@ public class InmuebleDAO {
             // Le pasamos la URL de la base de datos, el usuario y la contraseña para conectarnos a la base de datos
             conexion = DriverManager.getConnection(URL_DB, USER_DB, PASSWORD_DB);
             System.out.println(conexion);
+            System.out.println("conexion exitosa");
         } catch (ClassNotFoundException e) {
             System.out.println("Error: MariaDB JDBC Driver no encontrado.");
         } catch (SQLException e) {
@@ -124,6 +130,9 @@ public class InmuebleDAO {
         return inmueble;
     }
 
+    
+
+
     // Método para obtener todos los inmuebles
     public List<Inmueble> obtenerTodosInmuebles() {
         List<Inmueble> inmuebles = new ArrayList<>();
@@ -149,4 +158,32 @@ public class InmuebleDAO {
         }
         return inmuebles;
     }
+
+    // Método para obtener ventas por usuario
+    public List<Inmueble> listarVentasPorUsuario(int idUsuario) {
+        List<Inmueble> ventas = new ArrayList<>();
+        try (Connection conexion = getConnection();
+             PreparedStatement pstmt = conexion.prepareStatement(OBTENER_VENTAS_POR_USUARIO)) {
+            pstmt.setInt(1, idUsuario);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                Inmueble inmueble = new Inmueble();
+                inmueble.setIdInmueble(rs.getInt("id_inmueble"));
+                inmueble.setDireccion(rs.getString("direccion"));
+                inmueble.setCiudad(rs.getString("ciudad"));
+                inmueble.setEstado(rs.getString("estado"));
+                inmueble.setCodigoPostal(rs.getString("codigo_postal"));
+                inmueble.setPrecio(rs.getDouble("precio"));
+                inmueble.setTipo(rs.getString("tipo"));
+                inmueble.setDescripcion(rs.getString("descripcion"));
+                inmueble.setPropietario(rs.getString("propietario"));
+                ventas.add(inmueble);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al obtener ventas por usuario: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return ventas;
+    }
+    
 }
