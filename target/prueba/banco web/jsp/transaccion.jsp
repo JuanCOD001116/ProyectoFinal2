@@ -16,12 +16,30 @@
         </div>
         <div class="menu">
             <ul>
+                <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Banco JSP</title>
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <h1>Banco JSP</h1>
+        </div>
+        <div class="menu">
+            <ul>
                 <li><a href="./inicioBanco.jsp">Inicio</a></li>
-                <li><a href="#">Cuentas</a></li>
-                <li><a href="#">Transferencias</a></li>
-                <li><a href="#">Pagos</a></li>
-                <li><a href="#">Perfil</a></li>
-                <li><a href="#">Salir</a></li>
+                <li><a href="./cuenta-asignada.jsp">Cuentas</a></li>
+                <li><a href="./transaccion.jsp">Transferencias</a></li>
+                <li><a href="./Politicas.jsp">Políticas</a></li>
+                <li><a href="./TCP.jsp">Transacciones Hechas</a></li>
+                <li><a href="../../initialPageInmo.jsp">Salir</a></li>
+            </ul>
+        </div>
+    </div>
             </ul>
         </div>
     </div>
