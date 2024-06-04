@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Registrar Inmueble</title>
-    <link rel="stylesheet" href="stylesRegistry.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <div class="loginview">

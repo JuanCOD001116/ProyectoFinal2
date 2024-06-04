@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Registrar Subasta</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <div class="container">
@@ -32,7 +32,7 @@
             </div>
             <button type="submit">Registrar Subasta</button>
         </form>
-        <a href="index.jsp">Regresar</a>
+        <a href="dashboard.jsp">Regresar</a>
         <div>
             <c:if test="${not empty param.error}">
                 <p class="error">${param.error}</p>

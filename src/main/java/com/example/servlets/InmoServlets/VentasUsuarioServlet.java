@@ -30,6 +30,7 @@ public class VentasUsuarioServlet extends HttpServlet {
             List<Inmueble> ventas = inmuebleDAO.listarVentasPorUsuario(idUsuario);
             System.out.println(ventas);
             request.setAttribute("ventas", ventas);
+            request.setAttribute("test", "Hola");
             request.getRequestDispatcher("ventasUsuarioResultado.jsp").forward(request, response);
         } catch (NumberFormatException e) {
             response.sendRedirect("ventasUsuario.jsp?error=ID de usuario no válido");

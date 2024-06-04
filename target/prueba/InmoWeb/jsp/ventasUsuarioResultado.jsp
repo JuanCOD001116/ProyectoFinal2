@@ -1,9 +1,11 @@
-<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %> <%@ taglib
+prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Resultados de Ventas por Usuario</title>
+    <link rel="stylesheet" href="../css/stylesDashboard.css">
 </head>
 <body>
     <h2>Resultados de Ventas por Usuario</h2>
@@ -21,7 +23,7 @@
         </tr>
         <c:forEach var="venta" items="${ventas}">
             <tr>
-                <td>${venta.idInmueble}</td>
+                <td>${venta.idImueble}</td>
                 <td>${venta.direccion}</td>
                 <td>${venta.ciudad}</td>
                 <td>${venta.estado}</td>

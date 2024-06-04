@@ -12,9 +12,10 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/InmoWeb/jsp/inmuebles")
+@WebServlet("/inmuebles")
 public class InventarioServlet extends HttpServlet {
 
+    
     private InmuebleDAO inmuebleDAO;
 
     public void init() {
@@ -23,8 +24,10 @@ public class InventarioServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        List<Inmueble> inmuebles = inmuebleDAO.obtenerTodosInmuebles();
-        request.setAttribute("inmuebles", inmuebles);
+        List<Inmueble> inmueble = inmuebleDAO.obtenerTodosInmuebles();
+        System.out.println("llegamos maracuchos");
+        request.setAttribute("inmuebles", inmueble);
         request.getRequestDispatcher("inventario.jsp").forward(request, response);
+        
     }
 }

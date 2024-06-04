@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Venta Directa de Inmueble</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <div class="container">
@@ -33,7 +33,7 @@
             </div>
             <button type="submit">Realizar Venta</button>
         </form>
-        <a href="inmuebles.jsp">Regresar a Inmuebles</a>
+        <a href="dashboard.jsp">Regresar a Inmuebles</a>
         <div>
             <c:if test="${not empty param.error}">
                 <p class="error">${param.error}</p>

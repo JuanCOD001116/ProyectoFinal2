@@ -15,8 +15,8 @@
             </div>
             <div class="fields">
                 <p>¡Felicidades! Tu registro ha sido exitoso.</p>
-                <a href="./IniciarSesion/loginInmo.jsp">
-                    <button>Ir a Inicio de Sesión</button>
+                <a href="./InmoWeb/jsp/dashboard.jsp">
+                    <button>Ir a Inmobiliaria</button>
                 </a>
             </div>
         </div>

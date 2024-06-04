@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Inventario de Inmuebles</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <h2>Inventario de Inmuebles</h2>
@@ -33,6 +34,6 @@
             </tr>
         </c:forEach>
     </table>
-    <a href="index.jsp">Regresar</a>
+    <a href="dashboard.jsp">Regresar</a>
 </body>
 </html>

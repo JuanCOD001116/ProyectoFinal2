@@ -1,9 +1,11 @@
-<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %> <%@ taglib
+prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Ventas por Usuario</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <h2>Ventas por Usuario</h2>
@@ -38,6 +40,6 @@
                 </tr>
             </c:forEach>
     </table>
-    <a href="index.jsp">Regresar</a>
+    <a href="dashboard.jsp">Regresar</a>
 </body>
 </html>
