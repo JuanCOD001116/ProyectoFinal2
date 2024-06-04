@@ -5,6 +5,8 @@ import com.example.model.banco.Transaccion;
 
 import java.io.IOException;
 import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,8 +61,21 @@ public class TransaccionServlet extends HttpServlet {
     List<Transaccion> transacciones = new ArrayList<>();
     transacciones = transaccionDAO.seleccionarTransaccionCO(idCuentaOrigen, fecha_inicio, fecha_final);
     System.out.println(transacciones);
-    request.setAttribute("transacciones", transacciones);
+    request.setAttribute("Transaccion", transacciones);
     request.getRequestDispatcher("./TCP.jsp").forward(request, response);
       }
+
+    public static float calcularInteresMensual(Timestamp fechaInicio, Timestamp fechaFin, float monto) {
+        LocalDate inicio = fechaInicio.toLocalDateTime().toLocalDate();
+        LocalDate fin = fechaFin.toLocalDateTime().toLocalDate();
+
+        // Calcula el período en meses entre las dos fechas
+        Period periodo = Period.between(inicio, fin);
+        int meses = periodo.getMonths();
+        float tasaInteresMensual = 0.01f; // Cambia la tasa según tus necesidades
+        float interesMensual = monto * tasaInteresMensual * meses;
+
+        return interesMensual;
+    }
 
 }

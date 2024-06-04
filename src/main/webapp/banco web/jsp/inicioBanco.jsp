@@ -14,12 +14,12 @@
         </div>
         <div class="menu">
             <ul>
-                <li><a href="j.jsp">Inicio</a></li>
+                <li><a href="./inicioBanco.jsp">Inicio</a></li>
                 <li><a href="./cuenta-asignada.jsp">Cuentas</a></li>
                 <li><a href="./transaccion.jsp">Transferencias</a></li>
-                <li><a href="#">Pagos</a></li>
+                <li><a href="./Politicas.jsp">Políticas</a></li>
                 <li><a href="./TCP.jsp">Transacciones Hechas</a></li>
-                <li><a href="#">Salir</a></li>
+                <li><a href="../../initialPageInmo.jsp">Salir</a></li>
             </ul>
         </div>
     </div>

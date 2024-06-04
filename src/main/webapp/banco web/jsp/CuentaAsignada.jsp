@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Exitoso</title>
     <link rel="stylesheet" href="../../Registro/stylesRegistry.css">
+    
     <script>
         // Función para redireccionar a la página principal
         function redireccionar() {
